@@ -1,7 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 export type Payment = {
   id: string;
@@ -33,7 +34,21 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "customer",
-    header: "Customer",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Customer
+          <ArrowUpDown
+            className={cn("ml-2 h-4 w-4", {
+              "text-black": column.getIsSorted() === "asc",
+            })}
+          />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "email",
