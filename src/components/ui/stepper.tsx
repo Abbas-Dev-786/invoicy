@@ -35,12 +35,12 @@ const Stepper = ({ items }: StepperProps) => {
 
   return (
     <>
-      <ol className="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+      <ol className="flex items-center justify-between w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
         {items.map((stepItem, id) => (
           <li
             key={`step-${id}`}
             className={cn("flex items-center", {
-              "md:w-full sm:after:content-[''] after:w-full  after:bg-gray-400 after:h-[2px] after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-4 xl:after:mx-3 dark:after:border-gray-700":
+              "w-full  after:w-full  after:bg-gray-400 after:h-[2px] after:border-b after:border-gray-200 after:border-1  after:mx-4 xl:after:mx-3 ":
                 items.length - 1 !== id,
               "text-black font-bold": activeStep >= id,
             })}
@@ -51,7 +51,7 @@ const Stepper = ({ items }: StepperProps) => {
                 <p>{stepItem.link}</p>
               </span>
             ) : (
-              <span className="flex flex-col items-center gap-2">
+              <span className="flex flex-col items-center gap-2 after:mx-2">
                 <CircleCheck />
                 <p>{stepItem.link}</p>
               </span>
