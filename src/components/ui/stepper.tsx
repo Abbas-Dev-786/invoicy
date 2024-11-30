@@ -48,7 +48,12 @@ const Stepper = ({ items }: StepperProps) => {
             {items.length - 1 !== id ? (
               <span className="flex flex-col gap-2 items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
                 <CircleCheck />
-                <p>{stepItem.link}</p>
+                <p>
+                  {stepItem.link.split(" ")[0]}{" "}
+                  <span className="hidden md:inline-block">
+                    {stepItem.link.split(" ").slice(1).join(" ")}
+                  </span>
+                </p>
               </span>
             ) : (
               <span className="flex flex-col items-center gap-2 after:mx-2">
