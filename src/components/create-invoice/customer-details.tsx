@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -219,7 +218,7 @@ const CustomerDetailsTab = () => {
               <FormItem>
                 <FormLabel>Payment Mode</FormLabel>
                 <FormControl>
-                  <Select>
+                  <Select {...field}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
