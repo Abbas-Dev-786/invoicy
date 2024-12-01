@@ -1,6 +1,7 @@
 import React from "react";
 import CustomerDetailsTab from "@/components/create-invoice/customer-details";
 import Stepper, { StepperItems } from "@/components/ui/stepper";
+import ItemDetailsTab from "@/components/create-invoice/item-details";
 
 const NewInvoicePage = () => {
   const stepperItems: StepperItems[] = [
@@ -10,7 +11,7 @@ const NewInvoicePage = () => {
     },
     {
       link: "Item Details",
-      element: <div>Item Details will be shown here</div>,
+      element: <ItemDetailsTab />,
     },
     {
       link: "Preview",
@@ -19,7 +20,7 @@ const NewInvoicePage = () => {
   ];
 
   return (
-    <main className="flex flex-col gap-5 items-center h-full justify-center max-w-6xl mx-auto my-12">
+    <main className="flex flex-col min-h-[80vh] gap-5 items-center h-full justify-center max-w-6xl mx-auto my-12">
       <section className="w-full">
         <h1 className="text-center text-3xl font-semibold mb-7">
           Create Invoice

@@ -218,7 +218,11 @@ const CustomerDetailsTab = () => {
               <FormItem>
                 <FormLabel>Payment Mode</FormLabel>
                 <FormControl>
-                  <Select {...field}>
+                  <Select
+                    {...field}
+                    onValueChange={field.onChange}
+                    value={field.value}
+                  >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
