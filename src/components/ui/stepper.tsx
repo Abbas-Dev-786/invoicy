@@ -15,7 +15,7 @@ interface StepperProps {
 }
 
 const Stepper = ({ items }: StepperProps) => {
-  const [activeStep, setActiveStep] = useState<number>(1);
+  const [activeStep, setActiveStep] = useState<number>(2);
 
   const handleNextBtnClick = () => {
     if (activeStep === items.length - 1) {

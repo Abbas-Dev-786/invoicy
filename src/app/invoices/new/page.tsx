@@ -2,6 +2,7 @@ import React from "react";
 import CustomerDetailsTab from "@/components/create-invoice/customer-details";
 import Stepper, { StepperItems } from "@/components/ui/stepper";
 import ItemDetailsTab from "@/components/create-invoice/item-details";
+import InvoicePreviewTab from "@/components/create-invoice/invoice-preview";
 
 const NewInvoicePage = () => {
   const stepperItems: StepperItems[] = [
@@ -15,7 +16,7 @@ const NewInvoicePage = () => {
     },
     {
       link: "Preview",
-      element: <div>preview will be shown here</div>,
+      element: <InvoicePreviewTab />,
     },
   ];
 
